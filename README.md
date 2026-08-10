@@ -9,7 +9,7 @@ WbReports-Colllector - это скрипт, который формирует о
 git clone https://github.com/Vsevolod-Strokov/WbReports-Colllector.git
 
 # Активация виртуального окружения 
-cd wbreports-colllector
+cd WbReports-Colllector
 python -m venv venv
 source venv/bin/activate
 
@@ -25,7 +25,8 @@ mv .env_sample .env
 # Инструкция по использованию
 
 ```
-#Необходимо запустить скрипт с аргументами начала и конца временного диапазона сбора отчётов, например:
+# Необходимо запустить скрипт с аргументами 
+# начала и конца временного диапазона сбора отчётов, например:
 python get_reports.py 06-30 07-15
 
 # После этого будет сформирована выжимка из отчётов в файле data.xslx
