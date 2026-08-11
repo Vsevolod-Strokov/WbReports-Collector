@@ -6,7 +6,7 @@ WbReports-Colllector - это скрипт, который формирует о
 
 ```
 # Загрузка репозитория
-git clone https://github.com/Vsevolod-Strokov/WbReports-Colllector.git
+git clone https://github.com/Vsevolod-Strokov/WbReports-Collector.git
 
 # Активация виртуального окружения 
 cd WbReports-Colllector
@@ -29,5 +29,12 @@ mv .env_sample .env
 # начала и конца временного диапазона сбора отчётов, например:
 python get_reports.py 06-30 07-15
 
-# После этого будет сформирована выжимка из отчётов в файле data.xslx
+# После этого будет сформирована выжимка из отчётов в файле data.xlsx
+
 ```
+
+# Документация 
+
+Вы можете отредактировать поля под себя, опредилив их при помощи официальной документации wb:
+
+[Ссылка на api wildberries](https://dev.wildberries.ru/docs/openapi/financial-reports-and-accounting#tag/financialReports/operation/postV1SalesReportsList)
