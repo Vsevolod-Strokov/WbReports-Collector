@@ -3,6 +3,16 @@ from dotenv import load_dotenv
 import os
 import httpx
 import sys
+from enum import Enum
+
+
+class TableHeader(Enum):
+    SKU = 'Артикул'
+    REASON = 'Обоснование'
+    PAYMENT = 'Выплаты'
+    DELIVERY = 'Доставка'
+    DATE = 'Дата'
+    CURRENCY = 'Валюта'
 
 
 # Формирование переменных
@@ -68,9 +78,21 @@ for record in reports:
             'currency']             # Валюта
         ))
 
-# Формирование шапки таблицы
-df = pd.DataFrame(rows, columns=["Артикул", "Обоснование", "Выплата", "Доставка", "Дата", "Валюта"])
-df["Дата"] = (pd.to_datetime(df["Дата"], utc=True) + pd.Timedelta(hours=3)).dt.date
+
+
+df = pd.DataFrame(
+    rows,
+    columns=[
+        TableHeader.SKU.value,
+        TableHeader.REASON.value,
+        TableHeader.PAYMENT.value,
+        TableHeader.DELIVERY.value,
+        TableHeader.DATE.value,
+        TableHeader.CURRENCY.value,
+    ],
+)
+
+df[TableHeader.DATE.value] = (pd.to_datetime(df[TableHeader.DATE.value], utc=True) + pd.Timedelta(hours=3)).dt.date
 
 # Сохранение таблицы
 with pd.ExcelWriter("data.xlsx", engine="openpyxl", date_format="DD.MM.YYYY") as writer:
