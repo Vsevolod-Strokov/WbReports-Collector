@@ -33,25 +33,21 @@ wb_url="https://finance-api.wildberries.ru/api/finance/v1/sales-reports/detailed
 wb_header = {"Authorization": WB_API_KEY}
 
 req = {
-  "dateFrom": f"2026-{from_date}",
+  "dateFrom": f"2026-{from_date}",      # Сначала месяц, потом число 
   "dateTo": f"2026-{till_date}",
   "limit": 21100,
   "rrdId": 0,
-  "period": "weekly",
-  # "fields": [
-    # "rrdId",
-    # "nmId",
-    # "docTypeName",
-    # "retailAmount",
-    # "acquiringFee",
-    # "srid"
-  # ]
+  "period": "weekly"
 }
 
 # Запрос данных, и их преобразование в объект python
 response = httpx.post(url=wb_url, headers=wb_header, json=req)
 reports = response.json()
 
+if response.status_code != 200:
+    print("Произошла ошибка:")
+    print(reports)
+    sys.exit()
 
 rows = []
 
