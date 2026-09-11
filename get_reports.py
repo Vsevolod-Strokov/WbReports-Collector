@@ -52,8 +52,11 @@ if response.status_code != 200:
 rows = []
 
 
-# Функция для изввлечения значений из словаря
 def add_rows_to_arr(current_row, search_data):
+    """
+    Функция для изввлечения значений из словаря
+    """
+
     row = []
 
     for data_unit in search_data:
