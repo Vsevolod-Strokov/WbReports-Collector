@@ -1,4 +1,4 @@
-# WbReports-Colllector 
+# WbReports-Collector 
 Проблема: для расчёта заказов, которые были сделаны N дней назад, необходимо вручную скачивать каждый отчёт WB, который к тому же содержит множество избыточных полей. После этого, нужно объединять отчёты через Excel, переставляя необходимые столбцы в начало отчёта.
 
 Данный скрипт призван решить эту проблему. 
@@ -15,9 +15,16 @@
 git clone https://github.com/Vsevolod-Strokov/WbReports-Collector.git
 
 # Активация виртуального окружения 
-cd WbReports-Colllector
+cd WbReports-Collector
 python -m venv venv
 source venv/bin/activate
+
+<!-- Windows (cmd)
+py -m venv venv
+venv\Scripts\activate.bat
+ -->
+
+
 
 # Установка необходимых библиотек
 pip install -r requirements.txt
