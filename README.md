@@ -14,20 +14,25 @@
 # Загрузка репозитория
 git clone https://github.com/Vsevolod-Strokov/WbReports-Collector.git
 
+
 # Активация виртуального окружения 
 cd WbReports-Collector
 python -m venv venv
 source venv/bin/activate
 
+
 <!-- Windows (cmd)
+
 py -m venv venv
 venv\Scripts\activate.bat
+
  -->
 
 
 
 # Установка необходимых библиотек
 pip install -r requirements.txt
+
 
 
 # Формирование файла с API. После выполнения команды подставьте свой API ключ в .env
